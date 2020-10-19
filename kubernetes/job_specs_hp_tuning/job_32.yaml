@@ -1,0 +1,45 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: comments-on-semi-parametric-sampling-job-32
+spec:
+  template:
+    metadata:
+      labels:
+        app: comments-on-semi-parametric-sampling-job
+      name: comments-on-semi-parametric-sampling-job
+    spec:
+      containers:
+      - args:
+        - --name
+        - hp_tuning_32
+        - --steps
+        - '25000'
+        - --save_every
+        - '1000'
+        - --arms_nb
+        - '1000'
+        - --d
+        - '5'
+        - --gcs_bucket_path
+        - gs://semi-parametric-sampling-bucket
+        - --reward_distribution
+        - binomial
+        - --seed
+        - '1'
+        - --a
+        - '1.0'
+        - --models
+        - LinearSemiParametricSampling
+        - --sigma_1
+        - '0.1'
+        - --sigma_2
+        - '0.1'
+        - --sigma_3
+        - '0.1'
+        image: "gcr.io/semi-parametric-sampling/semi-parametric-sampling:latest
+        name: semi-parametric-sampling
+        resources:
+          requests:
+            memory: 4000Mi
+      restartPolicy: Never
