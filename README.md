@@ -1,11 +1,11 @@
 
 # Introduction
-This **code** implements a model presented in [Semi-Parametric Sampling for Stochastic Bandits with Many Arms](https://www.aaai.org/ojs/index.php/AAAI/article/view/4793) and compares it 
-to the other multi-armed bandit algorithms.
-In addition it contains also tuning of hyperparameters. All computation are done on Google Cloud.
+This code implements a model presented in [Semi-Parametric Sampling for Stochastic Bandits with Many Arms](https://www.aaai.org/ojs/index.php/AAAI/article/view/4793) and compares it 
+to other multi-armed bandit algorithms.
+It contains also tuning of hyperparameters. All computation are done on Google Cloud.
 
-In **data** directory there are results from hyperparameter tuning and the final simulation. They are described in 
-the paper `Comments on "Semi-Parametric Sampling for Stochastic Bandits with Many Arms"`.
+In data directory located [here](https://drive.google.com/drive/folders/1GmgGhNnlBVyVPqLRo0g18W9ZTHf15HuW?usp=sharing) on Google Drive there are results from hyperparameter tuning and the final simulation. 
+They are described in the document `Comments on "Semi-Parametric Sampling for Stochastic Bandits with Many Arms"`.
 
 # How to reproduce the results?
 ## Locally 
@@ -26,8 +26,8 @@ python simulation/run.py  --name local_testing --steps 1000 --save_every 100 \
 
 #### Disclaimer
 
-It is possible that to succesfully run all the code here you must enable some services or change quotas on Google Cloud. 
-You will get information and detailed instruction on what to do from Google tools when running scripts provided below.
+It is possible that to succesfully run all the code here you must enable a few services and change quotas on Google Cloud. 
+You will get information and detailed instruction on what to do when running scripts provided below.
 
 ### 1. Prepare everything on Google Cloud
 1. Create an account on [Google Cloud Platform](https://cloud.google.com/). Remember email used for this. 
@@ -49,7 +49,7 @@ You will get information and detailed instruction on what to do from Google tool
    ```
 1. Create a [service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts#iam-service-accounts-create-console),
 then [generate](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys) a JSON key for it. Save it in this project in the main directory as `credentials.json`.
-1. [Allow](https://cloud.google.com/storage/docs/access-control/using-iam-permissions) the service account to access created earlier bucket. 
+1. [Allow](https://cloud.google.com/storage/docs/access-control/using-iam-permissions) the service account to access the bucket created earlier. 
 
 ### 2. Get the project code
  We later assume that all commands are ran from the main project directory.
